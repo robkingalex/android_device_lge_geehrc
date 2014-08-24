@@ -1,8 +1,8 @@
 [
   {
-    "remote":      "omnirom",
-    "repository":  "android_kernel_lge_gee",
+    "remote":      "github",
+    "repository":  "robkingalex/kernel_msm",
     "target_path": "kernel/lge/gee",
-    "revision":    "android-4.4"
+    "revision":    "master"
   }
 ]
