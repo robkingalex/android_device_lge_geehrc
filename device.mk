@@ -30,7 +30,6 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 PRODUCT_PACKAGES := \
         lights.geehrc \
-        Torch
 
 PRODUCT_PACKAGES += \
         charger_res_images \

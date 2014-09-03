@@ -5,11 +5,15 @@ TARGET_SCREEN_WIDTH := 720
 # Specify phone tech before including full_phone
 $(call inherit-product, vendor/mk/config/gsm.mk)
 
-# Inherit some common Omni stuff.
+# Inherit some common MK stuff.
+$(call inherit-product, vendor/mk/config/common_full_phone.mk)
 $(call inherit-product, vendor/mk/config/common.mk)
 
+# Enhanced NFC
+$(call inherit-product, vendor/mk/config/nfc_enhanced.mk)
+
 # Inherit device configuration
-$(call inherit-product, device/lge/geehrc/full_geehrc.mk)
+$(call inherit-product, device/lge/geehrc/mk_geehrc.mk)
 
 # Release name
 PRODUCT_RELEASE_NAME := geehrc
