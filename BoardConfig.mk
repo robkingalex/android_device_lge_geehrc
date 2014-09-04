@@ -115,6 +115,8 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/lge/geehrc
 BOARD_SEPOLICY_DIRS := \
        device/lge/geehrc/sepolicy
 
+BOARD_HARDWARE_CLASS += device/lge/geehrc/cmhw
+
 BOARD_SEPOLICY_UNION := \
        app.te \
        bluetooth.te \
@@ -164,5 +166,3 @@ TW_INTERNAL_STORAGE_PATH := "/data/media"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
 TW_EXTERNAL_STORAGE_PATH := "/usb-otg"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "usb-otg"
-
-BOARD_HARDWARE_CLASS += device/lge/geehrc/cmhw

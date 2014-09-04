@@ -29,7 +29,7 @@ PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 PRODUCT_PACKAGES := \
-        lights.geehrc \
+        lights.geehrc
 
 PRODUCT_PACKAGES += \
         charger_res_images \
@@ -264,6 +264,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
         persist.sys.usb.config=mtp
+
+PRODUCT_RUNTIMES := \
+		runtime_libdvm_default
+
+PRODUCT_RUNTIMES += \
+		runtime_libart
 
 # QRNGD
 PRODUCT_PACKAGES += qrngd
