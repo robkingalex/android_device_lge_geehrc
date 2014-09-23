@@ -29,8 +29,7 @@ PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 PRODUCT_PACKAGES := \
-        lights.geehrc \
-        Torch
+        lights.geehrc
 
 PRODUCT_PACKAGES += \
         charger_res_images \
@@ -193,7 +192,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
         ro.qualcomm.bt.hci_transport=smd
 
 PRODUCT_PACKAGES += \
-        camera.geehrc \
         camera.msm8960 \
         libmmcamera_interface2 \
         libmmcamera_interface
@@ -266,8 +264,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
         persist.sys.usb.config=mtp
 
+PRODUCT_RUNTIMES := \
+		runtime_libdvm_default
+
+PRODUCT_RUNTIMES += \
+		runtime_libart
+
 # QRNGD
 PRODUCT_PACKAGES += qrngd
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product, hardware/qcom/msm8960/msm8960.mk)
+
+# Unleashed ion-storm kernel tweaks stuff
+PRODUCT_COPY_FILES += \
+		device/lge/geehrc/tweaks/99defcon:system/etc/init.d/99defcon
