@@ -105,7 +105,7 @@ echo "[defcon] Welcome to Ultimate Kernel Series" | tee /dev/kmsg
 	echo "2048" > /sys/block/mmcblk0/queue/read_ahead_kb
 	echo "[defcon] IOSched set: fiops" | tee /dev/kmsg
 	echo "[defcon] IOSched readahead set to: 2048" | tee /dev/kmsg
-	
+
 # Set RGB KCAL
 if [ -e /sys/devices/platform/kcal_ctrl.0/kcal ]; then
 	sd_r=255
