@@ -25,12 +25,12 @@ PRODUCT_PACKAGES += \
 
 
 # Get the long list of APNs
-PRODUCT_COPY_FILES := device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
+$(call inherit-product-if-exists, vendor/liquid/config/gsm.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-PRODUCT_NAME := cm_geehrc
+PRODUCT_NAME := liquid_geehrc
 PRODUCT_DEVICE := geehrc
 PRODUCT_BRAND := LGE
 PRODUCT_MODEL := LG Optimus G

@@ -15,5 +15,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/cm_geehrc.mk
+    $(LOCAL_DIR)/liquid_geehrc.mk
 
