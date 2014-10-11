@@ -28,7 +28,7 @@ TARGET_ARCH_VARIANT_FPU := neon-vfpv4
 # Enable ArchiDroid Optimizations
 USE_ARCH_OPTIMIZATIONS=true
 
-TARGET_GCC_VERSION_ARM := 4.7-sm
+TARGET_GCC_VERSION_ARM := 4.9-sm
 TARGET_GCC_VERSION_AND := 4.7-sm
 
 # Krait optimizations
