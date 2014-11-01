@@ -22,14 +22,20 @@ TARGET_CPU_SMP := true
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := krait
+TARGET_ARCH_VARIANT_CPU := cortex-a15
+TARGET_ARCH_VARIANT_FPU := neon-vfpv4
 
 # Krait optimizations
-TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 TARGET_USE_KRAIT_PLD_SET := true
 TARGET_KRAIT_BIONIC_PLDOFFS := 10
 TARGET_KRAIT_BIONIC_PLDTHRESH := 10
 TARGET_KRAIT_BIONIC_BBTHRESH := 64
 TARGET_KRAIT_BIONIC_PLDSIZE := 64
+ARCH_ARM_HAVE_TLS_REGISTER := true
+
+# Compiler Optimizations
+ARCH_ARM_HIGH_OPTIMIZATION := true
 
 TARGET_NO_BOOTLOADER := true
 
@@ -79,14 +85,13 @@ USE_OPENGL_RENDERER := true
 TARGET_USES_ION := true
 TARGET_USES_OVERLAY := true
 TARGET_USES_SF_BYPASS := true
-TARGET_USES_C2D_COMPOSITON := true
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+TARGET_USES_C2D_COMPOSITION := true
 
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 #TARGET_RECOVERY_UI_LIB := librecovery_ui_geehrc
 
 TARGET_RECOVERY_FSTAB = device/lge/geehrc/ramdisk/fstab.geehrc
-RECOVERY_FSTAB_VERSION = 2
+#RECOVERY_FSTAB_VERSION = 2
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 23068672 # 22M
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 23068672 # 22M
@@ -138,6 +143,16 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 USE_DEVICE_SPECIFIC_CAMERA:= true
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY:= true
 
+# Shader cache config options
+# Maximum size of the GLES Shaders that can be cached for reuse.
+# Increase the size if shaders of size greater than 12KB are used.
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+
+# Maximum GLES shader cache size for each app to store the compiled shader
+# binaries. Decrease the size if RAM or Flash Storage size is a limitation
+# of the device.
+MAX_EGL_CACHE_SIZE := 2048*1024
+
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 HAVE_ADRENO_SOURCE:= false
@@ -153,6 +168,10 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 TW_INCLUDE_JB_CRYPTO := true
 TW_FLASH_FROM_STORAGE := true
 TW_NO_USB_STORAGE := true
+TWHAVE_SELINUX := true
+TARGET_RECOVERY_INITRC := device/lge/geehrc/recovery/init.rc
+TW_BRIGHTNESS_PATH := /sys/class/backlight/lm3530/brightness
+TW_MAX_BRIGHTNESS := 255
 
 TW_INTERNAL_STORAGE_PATH := "/data/media"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
